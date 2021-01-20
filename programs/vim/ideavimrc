@@ -1,0 +1,15 @@
+let mapleader = ","
+
+set number
+set relativenumber
+
+set clipboard=unnamed
+
+set ReplaceWithRegister
+set commentary
+set surround
+set argtextobj
+set textobj-entire
+
+nnoremap <leader>aj :action GotoNextError<CR>
+nnoremap <leader>ak :action GotoPreviousError<CR>

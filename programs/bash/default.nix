@@ -15,6 +15,14 @@
       fi
 
       ${import ../git/completion.nix}
+
+      HISTSIZE=10000
+      HISTFILESIZE=2000000
+      HISTCONTROL=ignoreboth
+      HISTIGNORE='ls:ll:ls -alh:pwd:clear:history'
+      shopt -s histappend
+      shopt -s cmdhist
+      shopt -s globstar
     '';
     shellAliases = {
       cat = "bat";

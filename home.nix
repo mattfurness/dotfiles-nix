@@ -42,13 +42,16 @@
     };
   };
 
+  home.file.".ideavimrc".text = builtins.readFile ./programs/vim/ideavimrc;
+
   home.file."Library/Fonts/nerd-fonts" =
     let
-      customizedNerdFonts = with pkgs; [
-        (nerdfonts.override {
-          fonts = [ "RobotoMono" ];
-        })
-      ];
+      customizedNerdFonts = with pkgs;
+        [
+          (nerdfonts.override {
+            fonts = [ "RobotoMono" ];
+          })
+        ];
     in
     {
       source = builtins.toPath "${builtins.toString customizedNerdFonts}/share/fonts/truetype/NerdFonts";
