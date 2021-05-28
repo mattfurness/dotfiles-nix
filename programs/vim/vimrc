@@ -42,12 +42,15 @@ let g:ale_linters = {
 \ 'python': ['pyls'],
 \}
 let g:ale_fixers = {
-\ 'typescript': ['prettier'],
 \ 'elixir': ['mix_format'],
 \ 'elm': ['format'],
+\ 'graphql': ['prettier'],
 \ 'haskell': ['brittany'],
-\ 'python': ['black'],
 \ 'nix': ['nixpkgs-fmt'],
+\ 'python': ['black'],
+\ 'terraform': ['terraform'],
+\ 'typescript': ['prettier'],
+\ 'typescriptreact': ['prettier'],
 \}
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
