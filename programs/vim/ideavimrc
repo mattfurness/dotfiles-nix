@@ -2,7 +2,8 @@ let mapleader = ","
 
 set number
 set relativenumber
-
+set visualbell
+set noerrorbells
 set clipboard=unnamed
 
 set ReplaceWithRegister
@@ -13,3 +14,5 @@ set textobj-entire
 
 nnoremap <leader>aj :action GotoNextError<CR>
 nnoremap <leader>ak :action GotoPreviousError<CR>
+nnoremap <C-p> :action SearchEverywhere<CR>
+nnoremap <leader>r :action Replace<CR>

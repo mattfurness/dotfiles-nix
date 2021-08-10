@@ -17,7 +17,6 @@
     ./programs/git
     ./programs/starship.nix
     ./programs/tmux
-    ./programs/vscode.nix
     ./programs/vim
   ];
 
