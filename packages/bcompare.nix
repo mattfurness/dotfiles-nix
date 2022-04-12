@@ -1,14 +1,14 @@
-{ fetchurl, stdenv, unzip }:
+{ fetchurl, stdenv, lib, unzip }:
 
 stdenv.mkDerivation rec {
   pname = "bcompare";
-  version = "4.3.7.25118";
+  version = "4.4.2.26348";
 
   buildInputs = [ unzip ];
 
   src = fetchurl {
     url = "https://www.scootersoftware.com/BCompareOSX-${version}.zip";
-    sha256 = "0cmwk1hs3anrvii1v7a0v7315s8955zjxv7wibsi679bkc5p1xf7";
+    sha256 = "0jh2fcwm8rrjxjqj0h0mjlvlqsyyrz65sa1arj75kj06c5dsvaay";
   };
 
   unpackPhase = ''
@@ -23,7 +23,7 @@ stdenv.mkDerivation rec {
   dontBuild = true;
   dontConfigure = true;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "GUI application that allows to quickly and easily compare files and folders";
     longDescription = ''
       Beyond Compare is focused. Beyond Compare allows you to quickly and easily compare your files and folders.
