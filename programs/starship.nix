@@ -34,7 +34,6 @@
         success_symbol = "[λ](bold green)";
         error_symbol = "[λ](bold red)";
         vicmd_symbol = "❮";
-        use_symbol_for_status = true;
       };
     };
   };
