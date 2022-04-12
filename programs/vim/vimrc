@@ -37,7 +37,7 @@ set completeopt+=noinsert,noselect
 
 let g:ale_linters = {
 \ 'elixir': ['dialyxir'],
-\ 'elm': ['make', 'elm_ls'],
+\ 'elm': ['elm_ls'],
 \ 'haskell': ['hlint'],
 \ 'python': ['pyls'],
 \}
@@ -78,6 +78,7 @@ nnoremap <leader>ad :ALEDetail<CR>
 nnoremap <leader>ah :ALEHover<CR>
 nnoremap <leader>gd :ALEGoToDefinition<CR>
 nnoremap <leader>fr :ALEFindReferences<CR>
+nnoremap <leader>ar :ALERename<CR>
 
 " Fuzzy find
 nnoremap <C-p> :GFiles<CR>
