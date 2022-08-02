@@ -36,6 +36,7 @@
       };
       rebase.autosquash = true;
       pull.rebase = true;
+      push.autoSetupRemote = true;
     };
     ignores = [
       "tags"

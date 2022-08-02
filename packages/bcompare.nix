@@ -2,13 +2,13 @@
 
 stdenv.mkDerivation rec {
   pname = "bcompare";
-  version = "4.4.2.26348";
+  version = "4.4.3.26655";
 
   buildInputs = [ unzip ];
 
   src = fetchurl {
     url = "https://www.scootersoftware.com/BCompareOSX-${version}.zip";
-    sha256 = "0jh2fcwm8rrjxjqj0h0mjlvlqsyyrz65sa1arj75kj06c5dsvaay";
+    sha256 = "WApRf0UnMy2wTvDukfplLC+spC1kggdltyd2SKaliP4=";
   };
 
   unpackPhase = ''
