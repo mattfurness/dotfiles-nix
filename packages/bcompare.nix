@@ -1,27 +1,40 @@
-{ fetchurl, stdenv, lib, unzip }:
+{ lib
+, fetchurl
+, stdenv
+, unzip
+}:
 
-stdenv.mkDerivation rec {
+let
   pname = "bcompare";
-  version = "4.4.3.26655";
+  version = "4.4.6.27483";
 
-  buildInputs = [ unzip ];
+  throwSystem = throw "Unsupported system: ${stdenv.hostPlatform.system}";
 
-  src = fetchurl {
-    url = "https://www.scootersoftware.com/BCompareOSX-${version}.zip";
-    sha256 = "WApRf0UnMy2wTvDukfplLC+spC1kggdltyd2SKaliP4=";
+  srcs = {
+    x86_64-darwin = fetchurl {
+      url = "https://www.scootersoftware.com/BCompareOSX-${version}.zip";
+      sha256 = "sha256-hUzJfUgfCuvB6ADHbsgmEXXgntm01hPnfSjwl7jI70c=";
+    };
+
+    aarch64-darwin = srcs.x86_64-darwin;
   };
 
-  unpackPhase = ''
-    unzip $src
-  '';
+  src = srcs.${stdenv.hostPlatform.system} or throwSystem;
 
-  installPhase = ''
-    mkdir -p $out/Applications
-    mv ./Beyond\ Compare.app $out/Applications/Beyond\ Compare.app
-  '';
+  darwin = stdenv.mkDerivation {
+    inherit pname version src meta;
 
-  dontBuild = true;
-  dontConfigure = true;
+    buildInputs = [ unzip ];
+
+    unpackPhase = ''
+      unzip $src
+    '';
+
+    installPhase = ''
+      mkdir -p $out/Applications
+      mv ./Beyond\ Compare.app $out/Applications/Beyond\ Compare.app
+    '';
+  };
 
   meta = with lib; {
     description = "GUI application that allows to quickly and easily compare files and folders";
@@ -31,7 +44,9 @@ stdenv.mkDerivation rec {
       You can then merge the changes, synchronize your files, and generate reports for your records.
     '';
     homepage = "https://www.scootersoftware.com";
-    maintainers = [ ];
-    platforms = platforms.darwin;
+    sourceProvenance = with sourceTypes; [ binaryNativeCode ];
+    license = licenses.unfree;
+    platforms = builtins.attrNames srcs;
   };
-}
+in
+darwin
