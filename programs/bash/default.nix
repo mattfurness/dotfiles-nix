@@ -29,6 +29,7 @@
       fcd = "cd $(fd -t d | fzf)";
       ls = "exa -lag";
       reload = "source ~/.bash_profile";
+      rider = "open -na \"Rider.app\" --args";
       uuid = ''uuidgen | tr "[:upper:]" "[:lower:]" | tr -d "\n" | pbcopy'';
       vim = "nvim";
     };
