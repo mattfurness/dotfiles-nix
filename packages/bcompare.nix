@@ -34,6 +34,10 @@ let
       mkdir -p $out/Applications
       mv ./Beyond\ Compare.app $out/Applications/Beyond\ Compare.app
     '';
+
+    dontFixup = true;
+
+    dontStrip = true;
   };
 
   meta = with lib; {

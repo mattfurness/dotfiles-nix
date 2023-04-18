@@ -1,6 +1,6 @@
 { ... }:
 {
   programs.bcompare = {
-    enable = false;
+    enable = true;
   };
 }
