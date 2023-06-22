@@ -3,7 +3,12 @@
   programs.bash = {
     enable = true;
     initExtra = ''
-      . ${builtins.getEnv "HOME"}/.nix-profile/etc/profile.d/nix.sh
+      if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+        . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+      fi
+      if [ -e '${builtins.getEnv "HOME"}/.nix-profile/etc/profile.d/nix.sh' ]; then
+        . '${builtins.getEnv "HOME"}/.nix-profile/etc/profile.d/nix.sh'
+      fi
 
       ${builtins.readFile ./base-16.sh}
 
