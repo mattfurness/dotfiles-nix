@@ -4,22 +4,36 @@
 Install nix
 
 ```
-sh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume
+curl -L https://nixos.org/nix/install | sh
 ```
 
 Source nix:
 
 ```
-. ~/.nix-profile/etc/profile.d/nix.sh
+. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 ```
 
-Start a nix shell with git:
+Use experimental nix features:
+
+```
+echo "experimental-features = nix-command flakes" | sudo tee -a /etc/nix/nix.conf
+```
+
+Initialise profile:
+
+```
+nix profile install nixpkgs#hello
+```
+
+Start a nix shell with a recent git:
 
 ```
 nix-shell -p git
 ```
 
 Clone the repo:
+
+Note it is probably worth getting any ssh setup done at this point
 
 ```
 git clone git@github.com:mattfurness/dotfiles-nix.git dotfiles
@@ -37,4 +51,16 @@ Build home manager env:
 
 ```
 home-manager switch
+```
+
+Copy font files:
+
+```
+cp ~/Library/Fonts/nerd-fonts/* ~/Library/Fonts/
+```
+
+Update default shell:
+
+```
+echo "/Users/matt/.nix-profile/bin/bash" | sudo tee -a /etc/shells
 ```
