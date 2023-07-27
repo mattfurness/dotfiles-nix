@@ -22,6 +22,7 @@
       ${import ../git/completion.nix}
       ${import ../tmux/completion.nix}
 
+      PATH=$PATH:~/.docker/bin
       HISTSIZE=10000
       HISTFILESIZE=2000000
       HISTCONTROL=ignoreboth
