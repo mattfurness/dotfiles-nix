@@ -27,7 +27,7 @@
   home.packages = with pkgs; [
     bash-completion
     bashInteractive
-    gitAndTools.diff-so-fancy
+    delta
     exa
     fd
     nixpkgs-fmt

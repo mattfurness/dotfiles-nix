@@ -32,8 +32,15 @@
       };
       core = {
         editor = "vim";
-        pager = "diff-so-fancy | less --tabs=4 -RFX";
+        pager = "delta";
       };
+      delta = {
+        navigate = true;
+        side-by-side = true;
+        syntax-theme = "base16-256";
+        true-color = "always";
+      };
+      interactive.diffFilter = "delta --color-only";
       rebase.autosquash = true;
       pull.rebase = true;
       push.autoSetupRemote = true;
