@@ -20,6 +20,7 @@
       fi
 
       ${import ../git/completion.nix}
+      ${import ../tmux/completion.nix}
 
       HISTSIZE=10000
       HISTFILESIZE=2000000
