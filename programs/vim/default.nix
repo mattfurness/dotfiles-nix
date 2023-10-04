@@ -3,6 +3,7 @@
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
+      ReplaceWithRegister
       ale
       base16-vim
       editorconfig-vim
@@ -10,8 +11,8 @@
       fzf-vim
       fzfWrapper
       nerdtree
-      ReplaceWithRegister
       targets-vim
+      vim-abolish
       vim-airline
       vim-airline-themes
       vim-better-whitespace
@@ -20,6 +21,7 @@
       vim-repeat
       vim-surround
       vim-unimpaired
+      vim-visual-multi
     ];
     extraConfig = builtins.readFile ./vimrc;
   };

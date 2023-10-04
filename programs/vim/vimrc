@@ -40,6 +40,7 @@ let g:ale_linters = {
 \ 'elm': ['elm_ls'],
 \ 'haskell': ['hlint'],
 \ 'python': ['pyls'],
+\ 'html': ['angular']
 \}
 let g:ale_fixers = {
 \ 'elixir': ['mix_format'],
@@ -51,6 +52,8 @@ let g:ale_fixers = {
 \ 'terraform': ['terraform'],
 \ 'typescript': ['prettier'],
 \ 'typescriptreact': ['prettier'],
+\ 'html': ['prettier'],
+\ 'css': ['prettier']
 \}
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
@@ -72,6 +75,7 @@ nnoremap <leader>b :Buffers<CR>
 noremap Y y$
 
 " ALE
+nnoremap <leader>ai :ALEImport<CR>
 nnoremap <leader>aj :ALENext<CR>
 nnoremap <leader>ak :ALEPrevious<CR>
 nnoremap <leader>ad :ALEDetail<CR>
@@ -82,6 +86,12 @@ nnoremap <leader>ar :ALERename<CR>
 
 " Fuzzy find
 nnoremap <C-p> :GFiles<CR>
+
+" Multiple cursors
+let g:VM_maps = {}
+let g:VM_maps["Add Cursor Up"] = '<leader>k'   " new cursor up
+let g:VM_maps["Add Cursor Down"] = '<leader>j'   " new cursor down
+
 
 set noerrorbells visualbell t_vb=
 if has('autocmd')
