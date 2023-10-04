@@ -15,6 +15,7 @@
     ./programs/bcompare
     ./programs/fzf.nix
     ./programs/git
+    ./programs/jq.nix
     ./programs/starship.nix
     ./programs/tmux
     ./programs/vim
@@ -23,7 +24,7 @@
   home.username = builtins.getEnv "USER";
   home.homeDirectory = builtins.getEnv "HOME";
 
-  home.stateVersion = "21.03";
+  home.stateVersion = "23.05";
   home.packages = with pkgs; [
     bash-completion
     bashInteractive
@@ -32,6 +33,7 @@
     fd
     nixpkgs-fmt
     ripgrep
+    wget
   ];
 
   home.file.".config/base16-shell" = {

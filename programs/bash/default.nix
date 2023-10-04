@@ -22,7 +22,11 @@
       ${import ../git/completion.nix}
       ${import ../tmux/completion.nix}
 
-      PATH=$PATH:~/.docker/bin
+      [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+      [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+
+      PATH=$PATH:~/.docker/bin:/opt/homebrew/bin/:~/bin
+      NVM_DIR=~/.nvm
       HISTSIZE=10000
       HISTFILESIZE=2000000
       HISTCONTROL=ignoreboth
