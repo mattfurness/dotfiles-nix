@@ -34,6 +34,7 @@
       shopt -s histappend
       shopt -s cmdhist
       shopt -s globstar
+      ulimit -S -n 2048
     '';
     shellAliases = {
       cat = "bat";
