@@ -53,7 +53,8 @@ let g:ale_fixers = {
 \ 'typescript': ['prettier'],
 \ 'typescriptreact': ['prettier'],
 \ 'html': ['prettier'],
-\ 'css': ['prettier']
+\ 'css': ['prettier'],
+\ 'javascript': ['prettier']
 \}
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
