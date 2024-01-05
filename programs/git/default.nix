@@ -6,7 +6,7 @@
     userEmail = "matt.furness@gmail.com";
     aliases = {
       a = "add";
-      amend = "commit --amend";
+      cam = "commit --amend --no-edit";
       cm = "commit --message";
       cp = "cherry-pick";
       co = "checkout";
