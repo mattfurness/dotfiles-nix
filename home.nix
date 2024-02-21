@@ -29,7 +29,7 @@
     bash-completion
     bashInteractive
     delta
-    exa
+    eza
     fd
     nixpkgs-fmt
     ripgrep
