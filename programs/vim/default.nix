@@ -17,6 +17,7 @@
       vim-airline-themes
       vim-better-whitespace
       vim-commentary
+      vim-gh-line
       vim-polyglot
       vim-repeat
       vim-surround
