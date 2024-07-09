@@ -18,6 +18,7 @@
       p = "push";
       pf = "push --force-with-lease";
       s = "status";
+      smri = "!git submodule deinit -f . && git submodule update --init";
     };
     extraConfig = {
       init.defaultBranch = "main";
