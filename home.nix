@@ -31,6 +31,7 @@
     delta
     eza
     fd
+    ffmpeg
     nixpkgs-fmt
     ripgrep
     wget
