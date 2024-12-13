@@ -25,7 +25,12 @@
       # Have escape feel normal in vim
       set -sg escape-time 10
 
+      # Make sure to use load a login terminal so rc files are read correctly
       set-option -g default-command "bash -l"
+
+      # Make sure to use true colors for vim
+      set-option -ga terminal-overrides ',xterm-256color:Tc'
+
     '';
     terminal = "screen-256color";
   };
