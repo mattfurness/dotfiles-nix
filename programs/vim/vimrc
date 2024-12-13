@@ -73,7 +73,7 @@ nnoremap <leader>k <C-w><up>
 nnoremap <leader>j <C-w><down>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>b :Buffers<CR>
-noremap Y y$
+nnoremap Y y$
 
 " ALE
 nnoremap <leader>ai :ALEImport<CR>
@@ -90,8 +90,8 @@ nnoremap <C-p> :GFiles<CR>
 
 " Multiple cursors
 let g:VM_maps = {}
-let g:VM_maps["Add Cursor Up"] = '<leader>k'   " new cursor up
-let g:VM_maps["Add Cursor Down"] = '<leader>j'   " new cursor down
+let g:VM_maps["Add Cursor Up"] = '<leader><Up>'   " new cursor up
+let g:VM_maps["Add Cursor Down"] = '<leader><Down>'   " new cursor down
 
 
 set noerrorbells visualbell t_vb=
