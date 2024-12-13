@@ -19,6 +19,7 @@
     ./programs/starship.nix
     ./programs/tmux
     ./programs/vim
+    ./programs/z.nix
   ];
 
   home.username = builtins.getEnv "USER";
