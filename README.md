@@ -63,4 +63,13 @@ Update default shell:
 
 ```
 echo "/Users/matt/.nix-profile/bin/bash" | sudo tee -a /etc/shells
+chs -s /Users/matt/.nix-profile/bin/bash
+```
+
+Logout and in again so Allacrity pics up the base shell
+
+Open Allacrity and run
+
+```
+base16_oceanicnext
 ```
