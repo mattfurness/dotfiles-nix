@@ -35,6 +35,10 @@
       shopt -s cmdhist
       shopt -s globstar
       ulimit -S -n 2048
+
+      if [ -f "$HOME/.npmrc" ]; then
+        export NPM_TOKEN=$(grep '_authToken=' "$HOME/.npmrc" | cut -d '=' -f2)
+      fi
     '';
     shellAliases = {
       cat = "bat";
