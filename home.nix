@@ -36,6 +36,7 @@
     nixpkgs-fmt
     ripgrep
     wget
+    dotnetCorePackages.dotnet_8.sdk
   ];
 
   home.file.".config/base16-shell" = {
