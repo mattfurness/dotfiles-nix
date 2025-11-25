@@ -37,11 +37,13 @@
     ripgrep
     wget
     dotnetCorePackages.dotnet_8.sdk
+    nixfmt
   ];
 
   home.file.".config/base16-shell" = {
     source = builtins.fetchTarball {
-      url = "https://github.com/chriskempson/base16-shell/archive/ce8e1e540367ea83cc3e01eec7b2a11783b3f9e1.tar.gz";
+      url =
+        "https://github.com/chriskempson/base16-shell/archive/ce8e1e540367ea83cc3e01eec7b2a11783b3f9e1.tar.gz";
       sha256 = "1yj36k64zz65lxh28bb5rb5skwlinixxz6qwkwaf845ajvm45j1q";
     };
   };
@@ -49,16 +51,11 @@
   home.file.".ideavimrc".text = builtins.readFile ./programs/vim/ideavimrc;
 
   home.file."Library/Fonts/nerd-fonts" =
-    let
-      customizedNerdFonts = with pkgs;
-        [
-          (nerdfonts.override {
-            fonts = [ "RobotoMono" ];
-          })
-        ];
-    in
-    {
-      source = builtins.toPath "${builtins.toString customizedNerdFonts}/share/fonts/truetype/NerdFonts";
+    let customizedNerdFonts = with pkgs; [ nerd-fonts.roboto-mono ];
+    in {
+      source = builtins.toPath "${
+          builtins.toString customizedNerdFonts
+        }/share/fonts/truetype/NerdFonts";
       recursive = false;
     };
 }
