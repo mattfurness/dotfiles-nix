@@ -38,7 +38,10 @@
     wget
     dotnetCorePackages.dotnet_8.sdk
     nixfmt
+    nerd-fonts.roboto-mono
   ];
+
+  fonts.fontconfig.enable = true;
 
   home.file.".config/base16-shell" = {
     source = builtins.fetchTarball {
@@ -49,13 +52,4 @@
   };
 
   home.file.".ideavimrc".text = builtins.readFile ./programs/vim/ideavimrc;
-
-  home.file."Library/Fonts/nerd-fonts" =
-    let customizedNerdFonts = with pkgs; [ nerd-fonts.roboto-mono ];
-    in {
-      source = builtins.toPath "${
-          builtins.toString customizedNerdFonts
-        }/share/fonts/truetype/NerdFonts";
-      recursive = false;
-    };
 }

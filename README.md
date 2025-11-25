@@ -1,6 +1,5 @@
 ### Home manager on macos:
 
-
 Install nix
 
 ```
@@ -51,12 +50,6 @@ Build home manager env:
 
 ```
 home-manager switch
-```
-
-Copy font files:
-
-```
-cp ~/Library/Fonts/nerd-fonts/* ~/Library/Fonts/
 ```
 
 Update default shell:
