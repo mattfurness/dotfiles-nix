@@ -6,14 +6,14 @@
 
 let
   pname = "bcompare";
-  version = "4.4.6.27483";
+  version = "5.1.6.31527";
 
   throwSystem = throw "Unsupported system: ${stdenv.hostPlatform.system}";
 
   srcs = {
     x86_64-darwin = fetchurl {
-      url = "https://www.scootersoftware.com/BCompareOSX-${version}.zip";
-      sha256 = "sha256-hUzJfUgfCuvB6ADHbsgmEXXgntm01hPnfSjwl7jI70c=";
+      url = "https://www.scootersoftware.com/files/BCompareOSX-${version}.zip";
+      sha256 = "sha256-d/4ipwj4WeO1druwFKmJXxMcdvy9OMszlcZz7wHmk3Y=";
     };
 
     aarch64-darwin = srcs.x86_64-darwin;
