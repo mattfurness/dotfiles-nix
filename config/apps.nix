@@ -8,7 +8,7 @@
       apps = pkgs.buildEnv {
         name = "home-manager-applications";
         paths = config.home.packages;
-        pathsToLink = "/Applications";
+        pathsToLink = [ "/Applications" ];
       };
     in "${apps}/Applications";
   };
