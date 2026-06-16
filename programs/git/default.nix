@@ -2,25 +2,27 @@
 {
   programs.git = {
     enable = true;
-    userName = "mattfurness";
-    userEmail = "matt.furness@gmail.com";
-    aliases = {
-      a = "add";
-      cam = "commit --amend --no-edit";
-      cm = "commit --message";
-      cp = "cherry-pick";
-      co = "checkout";
-      cob = "checkout -b";
-      d = "diff";
-      ds = "diff --staged";
-      fixup = "commit --fixup";
-      l = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches";
-      p = "push";
-      pf = "push --force-with-lease";
-      s = "status";
-      smri = "!git submodule deinit -f . && git submodule update --init";
-    };
-    extraConfig = {
+    settings = {
+      user = {
+        name = "mattfurness";
+        email = "matt.furness@gmail.com";
+      };
+      alias = {
+        a = "add";
+        cam = "commit --amend --no-edit";
+        cm = "commit --message";
+        cp = "cherry-pick";
+        co = "checkout";
+        cob = "checkout -b";
+        d = "diff";
+        ds = "diff --staged";
+        fixup = "commit --fixup";
+        l = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches";
+        p = "push";
+        pf = "push --force-with-lease";
+        s = "status";
+        smri = "!git submodule deinit -f . && git submodule update --init";
+      };
       init.defaultBranch = "main";
       diff.tool = "bc3";
       difftool.bc3.trustExitCode = true;
