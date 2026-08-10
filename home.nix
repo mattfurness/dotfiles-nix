@@ -37,8 +37,8 @@
     ripgrep
     wget
     (dotnetCorePackages.combinePackages [
-      dotnetCorePackages.dotnet_8.sdk
-      dotnetCorePackages.dotnet_10.sdk
+      dotnet-sdk_8
+      dotnet-sdk_10
     ])
     nixfmt
     nerd-fonts.roboto-mono
