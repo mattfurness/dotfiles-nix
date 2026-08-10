@@ -2,14 +2,16 @@
 {
   programs.neovim = {
     enable = true;
+    withRuby = false;
+    withPython3 = false;
     plugins = with pkgs.vimPlugins; [
       ReplaceWithRegister
       ale
       base16-vim
       editorconfig-vim
-      fugitive
+      vim-fugitive
       fzf-vim
-      fzfWrapper
+      fzf-wrapper
       nerdtree
       targets-vim
       vim-abolish
